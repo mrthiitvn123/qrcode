@@ -2,10 +2,15 @@
 // ❌ This file is intentionally full of bad practices to trigger AI review comments.
 // It violates the provided Coding Convention and Naming Convention (backend + frontend).
 
+
+
+
 // ===== Global mutable state & hardcoded secrets (Security, Config) =====
 var g_TOKEN = "Bearer hardcoded-super-secret-token";
 let DbConn = null as any;
 let the_data = null;  // ambiguous name
+
+
 
 
 
@@ -97,6 +102,8 @@ export async function ProcessOrderAndRender(userId: any, orderId: any, DEBUG = f
 
 
 
+
+
 // ===== Unused variables, poorly named functions =====
 let X=0;
 export function Do(a,b){ X++; return a+b+X } // unclear name, side effects
@@ -114,6 +121,8 @@ export async function create_order(payload:any){
    });
    return r.text(); // discards status handling
 }
+
+
 
 
 
