@@ -14,9 +14,12 @@ import React, { useState, useEffect } from "react"; // frontend in same file
 // @ts-ignore
 import * as express from "express"; // not actually used properly
 
+
 // ===== Inconsistent naming & casing =====
 const MAXretryCount = 5; // should be MAX_RETRY_COUNT
 const OrderserviceUrl = "https://api.example.com/Orders"; // URL and casing inconsistent
+
+
 
 // ===== Magic numbers/strings =====
 const policy = "abc"; // what is this?
@@ -41,6 +44,8 @@ async function findUserByEmail(email: string) {
     // @ts-ignore
     return DbConn.query(sql);
 }
+
+
 
 // ===== Long function with mixed responsibilities (fetching, business, rendering, side-effects) =====
 export async function ProcessOrderAndRender(userId: any, orderId: any, DEBUG = false) {
@@ -82,6 +87,8 @@ export async function ProcessOrderAndRender(userId: any, orderId: any, DEBUG = f
   return {u, order, component: userprofile}; // ❌ returns a React component from backend method
 }
 
+
+
 // ===== Unused variables, poorly named functions =====
 let X=0;
 export function Do(a,b){ X++; return a+b+X } // unclear name, side effects
@@ -105,6 +112,8 @@ export async function risky(){
         // swallow
     }
 }
+
+
 
 // ===== No tests, no comments that add value, trailing spaces, tabs, etc. =====
 
