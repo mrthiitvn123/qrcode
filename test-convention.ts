@@ -106,7 +106,3 @@ export async function risky(){
     }
 }
 
-// ===== No tests, no comments that add value, trailing spaces, tabs, etc. =====
-
-// ===== Arbitrary export default (discouraged here) =====
-export default { ProcessOrderAndRender, Do, create_order, risky };
