@@ -2,10 +2,17 @@
 // ❌ This file is intentionally full of bad practices to trigger AI review comments.
 // It violates the provided Coding Convention and Naming Convention (backend + frontend).
 
+
+
+
 // ===== Global mutable state & hardcoded secrets (Security, Config) =====
 var g_TOKEN = "Bearer hardcoded-super-secret-token";
 let DbConn = null as any;
 let the_data = null;  // ambiguous name
+
+
+
+
 
 // ===== Mixed concerns (Backend + Frontend in one file) =====
 import fetch from "node-fetch"; // backend-ish
@@ -14,9 +21,18 @@ import React, { useState, useEffect } from "react"; // frontend in same file
 // @ts-ignore
 import * as express from "express"; // not actually used properly
 
+
+
+
+
 // ===== Inconsistent naming & casing =====
 const MAXretryCount = 5; // should be MAX_RETRY_COUNT
 const OrderserviceUrl = "https://api.example.com/Orders"; // URL and casing inconsistent
+
+
+
+
+
 
 // ===== Magic numbers/strings =====
 const policy = "abc"; // what is this?
@@ -41,6 +57,8 @@ async function findUserByEmail(email: string) {
     // @ts-ignore
     return DbConn.query(sql);
 }
+
+
 
 // ===== Long function with mixed responsibilities (fetching, business, rendering, side-effects) =====
 export async function ProcessOrderAndRender(userId: any, orderId: any, DEBUG = false) {
@@ -82,9 +100,16 @@ export async function ProcessOrderAndRender(userId: any, orderId: any, DEBUG = f
   return {u, order, component: userprofile}; // ❌ returns a React component from backend method
 }
 
+
+
+
+
 // ===== Unused variables, poorly named functions =====
 let X=0;
 export function Do(a,b){ X++; return a+b+X } // unclear name, side effects
+
+
+
 
 // ===== No input validation, no schema =====
 export async function create_order(payload:any){
@@ -97,6 +122,10 @@ export async function create_order(payload:any){
    return r.text(); // discards status handling
 }
 
+
+
+
+
 // ===== Inconsistent error handling =====
 export async function risky(){ 
     try{
@@ -105,6 +134,8 @@ export async function risky(){
         // swallow
     }
 }
+
+
 
 // ===== No tests, no comments that add value, trailing spaces, tabs, etc. =====
 
